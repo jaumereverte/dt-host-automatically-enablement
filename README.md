@@ -15,10 +15,11 @@ In order to deploy correctly the Workflows, follow the next steps:
    - terraform plan - will show in console the changes that will happen inside your enviornment after using the Terraform
    - terraform apply - will apply the changes descrived in terraform plan
 
-## Future improvements
+## Future improvements - TO DO
 
 - Use loop option from Dynatrace Javascript instead of looping in the same task
 - Have a second scenario to change the monitoring type
 - Group the two Workflows in only one
+- Create a execution rule to run workloads only workdays
 
 Author: Jaume Reverte - jaume.reverte@dynatrace.com
