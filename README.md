@@ -1,25 +1,26 @@
 # DT-Host-Automated-Monitoring
 
-This repository will help you deploy a configuration that will activate and deactivate the monitoring of hosts inside your Environment based in a period of time. So for example it will activate monitoring during working hours and will deactivate after working hours. All configuration is deployed automatically using Dynatrace Terraform provider.
+This repository provides the necessary configuration to automate the activation and deactivation of host monitoring within your environment based on specified time periods. For instance, monitoring can be activated during working hours and deactivated afterward. The entire configuration process is automated using the Dynatrace Terraform provider.
 
-Be aware that this project is under construction and you will se changes.
+> [!NOTE]
+> Please note that this project is currently under development, and changes are expected.
 
 ## Getting started with Host Automated Monitoring
 
-In order to deploy correctly the Workflows, follow the next steps:
+To correctly deploy the workflows, follow these steps:
 
-1. Create a file <file_name>.tfvars, in this file you need to add the dt_env_url, dt_api_token, automation_client_id and automation_client_secret
-2. In the variables.tf adapt the different variables to adapt the script to your use case
-3. Once you have done this changes, you have to use terraform to deploy the Workflows
-   - terraform init - will install the Dynatrace provider
-   - terraform plan - will show in console the changes that will happen inside your enviornment after using the Terraform
-   - terraform apply - will apply the changes descrived in terraform plan
+1. Create a `<file_name>.tfvars` file. In this file, you need to include the following variables: `dt_env_url`, `dt_api_token`, `automation_client_id`, and `automation_client_secret`.
+2. Modify the `variables.tf` file to adapt the script to your specific use case by setting the appropriate variables. These are the available variable for you to change: `hostFilterQuery`, `enableTime`, `disableTime`, `startDate` and `dt_owner`.
+3. Once these changes are made, use Terraform to deploy the workflows:
+   - `terraform init` - Installs the Dynatrace provider.
+   - `terraform plan` - Displays the proposed changes that will be applied to your environment.
+   - `terraform apply` - Applies the changes described in the Terraform plan.
 
 ## Future improvements - TO DO
 
-- Use loop option from Dynatrace Javascript instead of looping in the same task
-- Have a second scenario to change the monitoring type
-- Group the two Workflows in only one
-- Create a execution rule to run workloads only workdays
+- [] Implement the loop option in Dynatrace JavaScript instead of repeating the same task.
+- [] Develop an additional scenario to modify the monitoring type.
+- [] Consolidate the two workflows into a single workflow.
+- [] Create an execution rule to run workloads only on workdays.
 
 Author: Jaume Reverte - jaume.reverte@dynatrace.com
